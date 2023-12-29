@@ -6,7 +6,7 @@ def DisplayScore(a,b):
 
 UserPoints=0
 CompPoints=0
-
+print("hello..")
 Options=["R","P","S"]
 while True:
     print("R. Rock")
