@@ -1,11 +1,13 @@
+
 def CreateList():
-    Item1=input("Enter the item you wish to add: ")
-    # if Item1.isalpha() or Item1.isspace():
-    if any(char.isalpha() for char in Item1) or ' ' in Item1:
-        print("Added successfully")
-    else:
-        print("Please enter a sentence")
-    return Item1
+    while True:
+        Item1=input("Enter the item you wish to add: ")
+        # if Item1.isalpha() or Item1.isspace():
+        if any(char.isalpha() for char in Item1) or ' ' in Item1:
+            print("Added successfully")
+            return Item1
+        else:
+            print("Please enter a sentence")
 
 def Check(str1,lst):
     return str1 in lst
@@ -16,7 +18,7 @@ def UpdateList():
     ChoiceList=['1','2']
 
     while True:
-        choice2 = input("enter the choice: ")
+        choice2 = input("Please Enter the choice: ")
         if choice2 in ChoiceList:
             choice2=int(choice2)
             match choice2:
@@ -27,6 +29,7 @@ def UpdateList():
                         NewEntry=input("Enter new entry: ")
                         MyList[EntryIndex]=NewEntry
                         print("Updated Successfully...")
+                        break
                     else:
                         print("Item not found in list")
 
@@ -35,6 +38,7 @@ def UpdateList():
                     if Check(Oldentry,MyList) :
                         MyList.remove(Oldentry)
                         print("Deleted Successfully")
+                        break
                     else:
                         print("Item not found in list")
 
@@ -67,7 +71,7 @@ while not Exit:
     print("1.Create a list")
     print("2.Update the list")
     print("3.Track the list")
-    print('4.Exit')
+    print('4.Save and Exit')
 
     while True:
         choice = input('enter your choice: ')
